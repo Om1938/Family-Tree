@@ -10,12 +10,14 @@ import { GraphComponent } from './visuals/graph/graph.component';
 import { SHARED_VISUALS } from './visuals/shared';
 import { DataServiceService } from './data-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SidenavComponent } from './sidenav/sidenav.component';
 @NgModule({
   declarations: [
     AppComponent,
     GraphComponent,
     ...SHARED_VISUALS,
-    ...D3_DIRECTIVES  ],
+    ...D3_DIRECTIVES,
+    SidenavComponent  ],
   imports: [
     BrowserModule,
     FormsModule,

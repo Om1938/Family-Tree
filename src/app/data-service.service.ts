@@ -17,11 +17,6 @@ export class DataServiceService {
         'Content-Type':'application/json'
       })
     };
-    // return this.http.get<any>(this.api + '/getdata',options).pipe(map((res:any)=>{
-    //   console.log("hh");
-    //   console.log(res);
-    //   return res;
-    // }))
     return this.http.get(this.api + '/getdata');
   }
 }

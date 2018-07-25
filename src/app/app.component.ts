@@ -8,6 +8,7 @@ import { DataServiceService } from './data-service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  navstat = "Hide Options";
   nodes: Node[] = [];
   links: Link[] = [];
   nodeData: any[] = [];
@@ -34,5 +35,12 @@ export class AppComponent {
       this.links.push(new Link(element.start, element.end));
     })
     console.log(this.nodes);
+  }
+  clicked(){
+    if(this.navstat == "Hide Options"){
+      this.navstat = "Show Options";
+    }else{
+      this.navstat = "Hide Options";
+    }
   }
 }
