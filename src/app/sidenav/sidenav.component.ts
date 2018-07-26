@@ -22,8 +22,9 @@ export class SidenavComponent implements OnInit {
   }
   adduser(){
     console.log("gg");
-    var data = this.dataservice.addNode({user:this.username,password:this.password});
-    console.log(data);
+    this.dataservice.addNode({user:this.username,password:this.password}).subscribe((res: any) => {
+      console.log(res);
+    })
   }
   addrelation(){
     console.log("gg");
