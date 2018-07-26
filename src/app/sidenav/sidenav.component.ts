@@ -22,18 +22,21 @@ export class SidenavComponent implements OnInit {
   }
   adduser(){
     console.log("gg");
-    this.dataservice.addNode({user:this.username,password:this.password}).subscribe((res: any) => {
+    this.dataservice.addNode({username:this.username,password:this.password}).subscribe((res: any) => {
       console.log(res);
     })
   }
   addrelation(){
     console.log("gg");
-    var data = this.dataservice.addRelation({user1:this.user1,realtion:this.relation,user2:this.user2});
-    console.log(data);
+    this.dataservice.addRelation({user1:this.user1,realtion:this.relation,user2:this.user2}).subscribe((res: any) => {
+      console.log(res);
+    })
   }
   delnode(){
     console.log("gg");
-    this.dataservice.delNode({user:this.user});
+    this.dataservice.delNode({user:this.user}).subscribe((res: any) => {
+      console.log(res);
+    });
   }
 
 }
