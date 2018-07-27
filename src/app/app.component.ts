@@ -19,16 +19,22 @@ export class AppComponent {
 
   ready: boolean = false;
   constructor(private dataService: DataServiceService) {
-    const N = APP_CONFIG.N,
-      getIndex = number => number - 1;
-    dataService.getData().subscribe((res: any) => {
+    this.dispNodes();
+  }
+  refresh(){
+    this.ready = false;
+    this.dispNodes();
+  }
+  dispNodes(){
+    this.nodes.length = 0;
+    this.links.length = 0;
+    this.dataService.getData().subscribe((res: any) => {
       this.sync(res);
       this.ready = true;
     })
   }
   sync(res) {
     res.nodes.forEach(element => {
-      this.nodeData.push(element);
       this.nodes.push(new Node(element));
     });
     res.relations.forEach(element => {
