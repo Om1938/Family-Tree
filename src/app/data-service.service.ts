@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class DataServiceService {
 
   constructor(private http: HttpClient) { }
-  api: string = "http://192.168.42.162:3000";
+  api: string = "http://192.168.42.26:3000";
 
   getData() {
     //console.log("Call to hua hai");
